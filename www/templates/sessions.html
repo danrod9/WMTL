@@ -1,0 +1,25 @@
+<ion-view cache-view="false" view-title="Sessions">
+  <ion-content>
+    <div class="button-bar" style="padding:20px">
+      <a class="button button-small" ng-model="b1" ng-click="click(b1)" ng-class="b1.clicked?'button-positive':'button-outline button-positive'">Talks</a>
+      <a class="button button-small" ng-model="b2" ng-click="click(b2)" ng-class="b2.clicked?'button-positive':'button-outline button-positive'"
+        href="#/app/favorites">Favorites</a>
+    </div>
+    <ion-list>
+      <div ng-repeat="session in sessions">
+        <div ng-show="session.isDivider" class="item item-divider">
+          <h2 class="positive" style="font-weight:bold;">{{session.title}}</h2>
+        </div>
+        <a class="item item-icon-left item-icon-right" ng-show="!session.isDivider" href="#/app/sessions/{{session.id}}">
+          <div>
+            <i class="icon ion-ios-star" ng-class="isFavorite(session)?'energized':'color-lightgray'"></i>
+            <h2>{{session.title}}</h2>
+            <h4>By {{session.speaker}}</h4>
+            <p>{{session.starttime}} - {{session.endtime}} / {{session.room}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+          </div>
+        </a>
+      </div>
+    </ion-list>
+  </div>
+</ion-view>

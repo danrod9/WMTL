@@ -1,0 +1,18 @@
+<ion-view view-title="Favorites">
+  <ion-content>
+    <div class="button-bar" style="padding:20px">
+      <button class="button button-small" ng-model="b1" ng-click="click(b1)" ng-class="b1.clicked?'button-positive':'button-outline button-positive'"
+        ui-sref="app.sessions">Talks</button>
+      <button class="button button-small" ng-model="b2" ng-click="click(b2)" ng-class="b2.clicked?'button-positive':'button-outline button-positive'">Favorites</button>
+    </div>
+    <div align="center" ng-show="talksIsEmpty()">No favorites added</div>
+    <ion-list ng-hide="talksIsEmpty()" can-swipe="true">
+      <ion-item ng-repeat="talk in talks" class="item item-icon-right" href="#/app/sessions/{{talk.id}}">
+        <h2>{{talk.title}}</h2>
+        <p>{{talk.starttime}} - {{talk.endtime}} / {{talk.room}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="removeTalk(talk)">Delete</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

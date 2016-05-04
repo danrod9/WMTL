@@ -1,0 +1,79 @@
+<ion-view cache-view="false" view-title="Session">
+  <ion-header-bar class="bar-positive">
+    <button class="button button-icon icon ion-arrow-left-c" ng-click="goBack()"></button>
+    <!--<h1 class="title">Tech Talks</h1>-->
+    <div class="title">
+      <img src="img/headerLogo.png" style="height:90%;padding-top:5px;">
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list card">
+      <div class="item item-text-wrap">
+        <div class="col text-center">
+          <!--<img src="img/avatar.png" style="width:100px;border-radius:50%">-->
+          <img ng-src="{{session.avatar}}" fall-back-src="{{avatarImg}}" style="width:120px;border-radius:25%"/>
+        </div>
+        <h2 style="font-weight:bold;">{{session.title}}</h2>
+        <h3 class="positive">By {{session.speaker}}</h3>
+        <h4 style="font-size:12px;color:#999999;">{{session.position}}</h4>
+        <p style="float:left;">{{session.month}} {{session.day}}, {{session.year}}</p>
+        <p style="float:right;">{{session.starttime}}</p>
+        <br>
+      </div>
+      <div class="item item-body">
+        <div ng-if="rateIt">
+          <a class="button button-block button-balanced icon-left ion-thumbsup" style="font-size:20px;" ng-click="showRate(session)" ng-controller="RateModalCtrl">Rate talk</a>
+        </div>
+        <div>
+          <div ng-if="isFavorite(session)">
+            <i class="icon ion-ios-star" style="float:right;" ng-class="isFavorite(session)?'energized':'color-lightgray'">
+              <span style="color:#c0c0c0;"> Added as favorite</span>
+            </i>
+          </div>
+          <div ng-if="!isFavorite(session)">
+            <button style="float:right;" class="icon icon-left ion-ios-star energized button button-small button-outline button-balanced"
+              ng-click="addTalk(session)">Add as Favorite</button>
+          </div>
+        </div>
+        <p>Duration: {{duration}} min</p>
+        <h2 style="font-weight:bold;">Overview</h2>
+        <p>{{session.description}}</p>
+        <h2 style="font-weight:bold;">About the speaker</h2>
+        <p>{{session.aboutspeaker}}</p>
+        <div style="font-size:16px;font-weight:bold;">
+          <span>Location: </span><span class="positive">{{session.room}}</span>
+        </div>
+        <div class="col text-center">
+          <p>Tap to enlarge</p>
+        </div>
+        <a style="display:block" ng-click="showMap()" ng-controller="MapModalCtrl">
+          <div class="map-holder"></div>
+        <a>
+      </div>
+      <div class="item">
+        <!--
+        <a href="#" class="item center" ng-click="goToURL(session.webex)">
+          <img src="img/webex.jpg" width="50" style="padding-top:10px;"></img>
+          <span style="color:#c0c0c0;font-size:20px;padding-top:10px;">&nbsp;&nbsp;Join Webex meeting</span>
+        </a>
+        -->
+        <a class="button button-block button-balanced icon-left ion-videocamera" style="font-size:20px;" ng-click="goToURL(session.webex)">Join Webex meeting</a>
+        <!--
+        <a href="#" style="font-weight:bold;" ng-click="goToURL(session.webex)"><p>Click to Join Meeting</p></a>
+        <p>1. Click above to join the meeting
+        <p>2. You can also join by accesing:</p>
+        <div>
+          <a href="#" onClick="window.open('http://walmart.webex.com', '_system', 'location=yes'); return false;">http://walmart.webex.com</a>
+        </div>
+        <p>- Meeting Number: {{session.webexNum}}</p>
+        <p>- Meeting Password: {{session.webexPwd}}</p>
+        <p>Join from a video conferencing system or application:</p>
+        <p>Dial {{webexNum}}@walmart.webex.com</p>
+        <p>Internal Walmart video conference rooms:</p>
+        <p>Simply dial the 9-digit meeting number</p>
+        </p>
+        -->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

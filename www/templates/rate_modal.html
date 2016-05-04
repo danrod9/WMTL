@@ -1,0 +1,55 @@
+<ion-modal-view class="ion-rate-modal">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Rate talk</h1>
+    <button class="button icon ion-close" ng-click="closeModal()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="item">
+      <p>How would you rate this talk?</p>
+      <div class="col text-center">
+        <a class="button" ng-model="a1" ng-click="click1(a1);a1.value=1;" ng-class="a1.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f60d.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="a2" ng-click="click1(a2);a2.value=1;" ng-class="a2.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f642.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="a3" ng-click="click1(a3);a3.value=3;" ng-class="a3.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f610.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="a4" ng-click="click1(a4);a4.value=4;" ng-class="a4.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f634.png" style="width:25px;padding-top:15px;">
+        </a>
+        <!--
+        <a class="button" ng-model="a5" ng-click="click1(a5);a5.value=5;" ng-class="a5.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f644.png" style="width:25px;padding-top:15px;">
+        </a>
+        -->
+      </div>
+      <p>How would you rate the speaker?</p>
+      <div class="col text-center">
+        <a class="button" ng-model="b1" ng-click="click2(b1);b1.value=1;" ng-class="b1.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f60d.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="b2" ng-click="click2(b2);b2.value=2;" ng-class="b2.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f642.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="b3" ng-click="click2(b3);b3.value=3;" ng-class="b3.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f610.png" style="width:25px;padding-top:15px;">
+        </a>
+        <a class="button" ng-model="b4" ng-click="click2(b4);b4.value=4;" ng-class="b4.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f634.png" style="width:25px;padding-top:15px;">
+        </a>
+        <!--
+        <a class="button" ng-model="b5" ng-click="click2(b5);b5.value=5;" ng-class="b5.clicked?'button-balanced':'button-outline button-balanced'">
+          <img src="img/1f644.png" style="width:25px;padding-top:15px;">
+        </a>
+        -->
+      </div>
+      <br>
+      <label class="item item-input">
+        <textarea style="resize: none;" rows="4" ng-model="rate.comments" placeholder="Leave us a comment (optional)"></textarea>
+      </label>
+      <br>
+      <a class="button button-block" ng-click="sendRate()" ng-class="sendActive?'button-balanced':'button-outline button-balanced'">Send</i></a>
+  </ion-content>
+</ion-modal-view>

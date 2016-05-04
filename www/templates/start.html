@@ -1,0 +1,33 @@
+<!-- Start view -->
+<ion-view title="Start">
+<ion-pane>
+  <ion-content scroll="false">
+    <ion-slides  options="options" slider="data.slider">
+      <ion-slide-page class="center start-container">
+        <div>
+          <div class="col text-center">
+            <img src="img/logotech.png" style="width:95%"></img>
+            <br><br><br><br>
+            <span style="color:#ffffff;">
+              <i class="icon ion-chevron-left icon-accessory">   Slide to continue</i>
+            </span>
+          </div>
+        </div>
+      </ion-slide-page>
+      <ion-slide-page class="center start-container">
+        <div>
+          <div class="col text-center">
+            <h3 style="color:#ffffff;">Enter Access Code</h3>
+            <br>
+            <label class="item item-input">
+                <input type="password" placeholder="" ng-model="login.password">
+            </label>
+            <br><br><br><br><br>
+            <button class="button button-block button-balanced" ng-click="login()">Continue</button>
+          </div>
+        </div>
+      </ion-slide-page>
+    </ion-slides>
+  </ion-content>
+</ion-pane>
+</ion-view>
